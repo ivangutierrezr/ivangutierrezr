@@ -83,6 +83,7 @@ footer {
 section {
     border-top: 3px solid var(--primary-color);
     border-bottom: 3px solid var(--primary-color);
+    border-right: 6px solid var(--primary-color);
 }
 
 .first_section {
