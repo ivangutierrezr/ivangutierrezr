@@ -185,9 +185,6 @@ p {
 }
 
 .contenedor_foto_perfil .foto_perfil {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     position: absolute;
     top: 100px;
     left: 10%;
@@ -458,12 +455,18 @@ p {
         align-items: center;
     }
 
+    .contenedor_foto_perfil .foto_perfil img {
+        width: 200px;
+        height: 200px;
+    }
     .contenedor_foto_perfil {
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
     }
     .contenedor_foto_perfil .foto_perfil {
         position: unset;
+        width: 200px;
+        height: 200px;
     }
 
     /* Responsive tabla proyectos */
@@ -508,18 +511,44 @@ p {
         width: 100%;
     }
     .hobbies_grid .container_hobbies {
-        width: 100%;
+        /* width: 500px;
+        height: 500px; */
         border-radius: 150px;
+        flex-direction: column;
+        height: 400px;
     }
     .hobbies_grid .container_hobbies:nth-child(odd) {
         background-image: linear-gradient(-90deg, var(--primary-color) , var(--secondary-color));
     }
+    .hobbies_grid .container_hobbies:nth-child(even) {
+        border-radius: 50%;
+        justify-content: flex-end;
+        border-top-right-radius: 150px;
+        border-top-left-radius: 150px;
+    }
+    .hobbies_grid .container_hobbies:nth-child(odd) {
+        border-radius: 50%;
+        justify-content: flex-start;
+        border-bottom-right-radius: 150px;
+        border-bottom-left-radius: 150px;
+    }
     
+    .info_box .hobbie_text {
+        height: 50px;
+        width: 100%;
+        font-size: 18px;
+    }
     .info_box .hobbie_text:nth-child(even) {
         justify-content: center;
     }
     .info_box .hobbie_text:nth-child(odd) {
         justify-content: center;
+    }
+
+    .info_box .hobbie_img_container {
+        height: 300px;
+        width: 300px;
+        font-size: 18px;
     }
     
     /* Conspiraciones */
@@ -529,6 +558,13 @@ p {
     }
     
     /* Footer */
+
+    .superior {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 
     .facebook{
         width: 36px;
