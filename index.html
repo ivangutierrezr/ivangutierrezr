@@ -17,41 +17,40 @@
             <a href="#hobbies">Hobbies</a>
             <a href="#covid">Covid</a>
         </nav>
-        <section class="first_section" id="about">
-            <div class="gridSection">
+        <section class="first_section" name="about">
+            <div class="grid_section">
                 <div class="section_header_text">
                     <span>
                         Información personal
                     </span>
                 </div>
                 <div class="info_box">
-                    <ul class="about_me_list">
-                        <li>
+                    <div class="grid_about_me">
+                        <div class="about_me_list">
                             <span class="item_principal">Nombre Completo:</span>
                             <span class="item_secundario">Nelson Iván Gutiérrez Rendón</span>
-                        </li>
-                        <li>
                             <span class="item_principal">Edad:</span>
                             <span class="item_secundario">30 años</span>
-                        </li>
-                        <li>
                             <span class="item_principal">Sexo:</span>
                             <span class="item_secundario">Masculino</span>
-                        </li>
-                        <li>
                             <span class="item_principal">Ciudad de residencia:</span>
                             <span class="item_secundario">Pereira</span>
-                        </li>
-                        <li>
                             <span class="item_principal">Correo electrònico institucional:</span>
                             <span class="item_secundario">nelson.gutierrez@correounivalle.edu.co</span>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="main_container_foto">
+                            <div class="contenedor_foto_perfil">
+                                <div class="foto_perfil">
+                                    <img src="assets/FotoPerfil.JPG" alt="Foto Perfil">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="projects">
-            <div class="gridSection">
+        <section name="projects">
+            <div class="grid_section">
                 <div class="section_header_text">
                     <span>
                         Proyectos
@@ -263,8 +262,8 @@
                 </div>
             </div>
         </section>
-        <section id="hobbies">
-            <div class="gridSection">
+        <section name="hobbies">
+            <div class="grid_section">
                 <div class="section_header_text">
                     <span>
                         Hobbies
@@ -275,7 +274,7 @@
                     <div class="hobbies_grid">
                         <div class="container_hobbies">
                             <div class="hobbie_img_container">
-                                <img src="assets/Ajedrez.jpg" alt="Jugar Ajedrez">
+                                <img src="assets/Ajedrez1.jpg" alt="Jugar Ajedrez">
                             </div>
                             <div class="hobbie_text">
                                 Jugar ajedrez
@@ -325,15 +324,19 @@
                 </div>
             </div>
         </section>
-        <section class="last_section" id="covid">
-            <div class="gridSection">
+        <section class="last_section" name="covid">
+            <div class="grid_section">
                 <div class="section_header_text">
                     <span>
                         Covid
                     </span>
                 </div>
                 <div class="info_box">
-                    <video controls></video>
+                    <video controls poster="assets/cover-video.jpg">
+                        <source src="assets/Covid.mp4" type="video/mp4">
+                        <source src="assets/Covid.ogv" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </section>

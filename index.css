@@ -118,7 +118,7 @@ p {
 
 /* Clases contenedores internos de las section */
 
-.gridSection {
+.grid_section {
     display: grid;
     grid-template-columns: 150px 1fr;
     width: 100%;
@@ -152,13 +152,20 @@ p {
 
 /* Section Acerca de mi */
 
-.about_me_list {
+.grid_about_me {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
 }
-.about_me_list li{
+
+.about_me_list {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     margin: 10px;
+    padding-left: 50px;
 }
 .item_principal {
     font-weight: 600;
@@ -166,6 +173,58 @@ p {
 .item_secundario {
     font-weight: 400;
     margin-left: 35px;
+}
+
+.contenedor_foto_perfil {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.contenedor_foto_perfil .foto_perfil {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    position: absolute;
+    top: 100px;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 15px var(--primary-color);
+    box-sizing: border-box;
+    transition: .5s;
+    text-align: center;
+    background: #fff;
+    /* transform: translate(-50px, -25%) */
+}
+.contenedor_foto_perfil .foto_perfil:hover {
+    border-radius: 0;
+}
+.contenedor_foto_perfil .foto_perfil:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    z-index: -1;
+    transform: rotate(-45deg);
+    border: 5px solid var(--primary-color)
+}
+.contenedor_foto_perfil .foto_perfil img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: .5s;
+}
+.contenedor_foto_perfil .foto_perfil:hover img {
+    border-radius: 0;
 }
 
 /* Section Proyectos */
@@ -198,6 +257,7 @@ p {
 .hobbies_grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 70%;
 }
 
 .hobbies_grid .container_hobbies {
@@ -206,6 +266,7 @@ p {
     align-items: center;
     height: 300px;
     width: 100%;
+    border: 0;
     /* border-radius: 150px; */
     /* background-color: var(--secondary-color); */
 }
@@ -246,7 +307,8 @@ p {
     width: 300px;
     background-color: white;
     /* text-shadow: 0 0 50px rgba(0,0,0,.5); */
-    border: 15px solid var(--primary-color);
+    /* border: 15px solid var(--primary-color); */
+    border: 0;
     border-radius: 50%
 }
 
@@ -336,34 +398,76 @@ p {
 
 /* Responsive */
 
-@media screen and (max-width: 1000px) {
-    /* Hobbies */
-
+@media screen and (max-width: 1300px) {
     .hobbies_grid {
-        grid-template-columns: 1fr;
-    }
-    .hobbies_grid .container_hobbies {
         width: 100%;
-        border-radius: 150px;
-    }
-    .hobbies_grid .container_hobbies:nth-child(odd) {
-        background-image: linear-gradient(-90deg, var(--primary-color) , var(--secondary-color));
-    }
-
-    /* Conspiraciones */
-
-    .info_box video {
-        width: 70%;
     }
 }
-
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1080px) {
     body {
         font-size: 16px;
     }
 
-    /* Responsive tabla proyectos */
+    .grid_section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
+    .section_header_text {
+        width: 100%;
+        padding-bottom: 5px;
+    }
+    .section_header_text span{
+        color: white;
+        transform: unset;
+        text-align: center;
+        font-size: 50px;
+    }
+    
+    .grid_about_me {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .grid_about_me .about_me_list{
+        order:2;
+    }
+    
+    .grid_about_me .contenedor_foto_perfil{
+        order:1;
+        margin: 30px 0;
+    }
+    
+    .about_me_list {
+        justify-content: center;
+        align-items: center;
+        padding: unset;
+    }
+    .item_secundario {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .main_container_foto {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedor_foto_perfil {
+        width: 300px;
+        height: 300px;
+    }
+    .contenedor_foto_perfil .foto_perfil {
+        position: unset;
+    }
+
+    /* Responsive tabla proyectos */
+    
     .table_projects {
         width: 100%;
     }
@@ -396,10 +500,91 @@ p {
     .table_projects td:last-child {
         border-bottom: 0;
     }
-
+    
+    /* Hobbies */
+    
+    .hobbies_grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    .hobbies_grid .container_hobbies {
+        width: 100%;
+        border-radius: 150px;
+    }
+    .hobbies_grid .container_hobbies:nth-child(odd) {
+        background-image: linear-gradient(-90deg, var(--primary-color) , var(--secondary-color));
+    }
+    
+    .info_box .hobbie_text:nth-child(even) {
+        justify-content: center;
+    }
+    .info_box .hobbie_text:nth-child(odd) {
+        justify-content: center;
+    }
+    
     /* Conspiraciones */
-
+    
     .info_box video {
         width: 90%;
+    }
+    
+    /* Footer */
+
+    .facebook{
+        width: 36px;
+        height: 36px;
+        background: transparent url("assets/sprite-social-media-resp.jpg");
+        background-position: 0px 0px;
+        transition-property: background-position;
+        transition-duration: .1s;
+        transition-timing-function:ease-out;
+        float:left;
+    }
+    .twitter{
+        width: 36px;
+        height: 36px;
+        background: transparent url("assets/sprite-social-media-resp.jpg");
+        background-position: -30px 0px;
+        transition-property: background-position;
+        transition-duration: .1s;
+        transition-timing-function:ease-out;
+        float:left;
+    }
+    .instagram{
+        width: 36px;
+        height: 36px;
+        background: transparent url("assets/sprite-social-media-resp.jpg");
+        background-position: -90px 0px;
+        transition-property: background-position;
+        transition-duration: .1s;
+        transition-timing-function:ease-out;
+        float:left;
+    }
+    .linkedin{
+        width: 36px;
+        height: 36px;
+        background: transparent url("assets/sprite-social-media-resp.jpg");
+        background-position: -120px 0px;
+        transition-property: background-position;
+        transition-duration: .1s;
+        transition-timing-function:ease-out;
+        float:left;
+    }
+    .facebook:hover{
+        background-position: 0px -30px;
+    }
+    .twitter:hover{
+        background-position: -30px -30px;
+    }
+    .instagram:hover{
+        background-position: -90px -30px;
+    }
+    .linkedin:hover{
+        background-position: -120px -30px;
+    }
+    .social_media_footer a{
+        margin: 5px;
+        border-radius: 50%;
+        border: 3px solid var(--primary-color);
     }
 }
